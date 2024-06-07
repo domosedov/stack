@@ -15,18 +15,19 @@ import {
 import type { ComponentPropsWithoutRef, ComponentRef } from 'react'
 import { forwardRef } from 'react'
 
-const Root = _Root
-const Portal = _Portal
+export const Root = _Root
+export const Portal = _Portal
 
-const Trigger = forwardRef<
+export const Trigger = forwardRef<
 	ComponentRef<typeof _Trigger>,
 	ComponentPropsWithoutRef<typeof _Trigger>
 >(({ className, ...props }, ref) => <_Trigger ref={ref} className={cx('', className)} {...props} />)
 Trigger.displayName = _Trigger.displayName
 
-const Close = forwardRef<ComponentRef<typeof _Close>, ComponentPropsWithoutRef<typeof _Close>>(
-	({ className, ...props }, ref) => <_Close ref={ref} className={cx('', className)} {...props} />
-)
+export const Close = forwardRef<
+	ComponentRef<typeof _Close>,
+	ComponentPropsWithoutRef<typeof _Close>
+>(({ className, ...props }, ref) => <_Close ref={ref} className={cx('', className)} {...props} />)
 Close.displayName = _Close.displayName
 
 const content = cva({
@@ -35,22 +36,33 @@ const content = cva({
 		position: {
 			top: 'top-5',
 			center: 'top-1/2 -translate-y-1/2'
+		},
+		animated: {
+			true: '',
+			false: ''
 		}
 	},
 	defaultVariants: {
 		position: 'top'
-	}
+	},
+	compoundVariants: [
+		{
+			animated: true,
+			position: 'top',
+			className: ''
+		}
+	]
 })
 
-const Content = forwardRef<
+export const Content = forwardRef<
 	ComponentRef<typeof _Content>,
 	ComponentPropsWithoutRef<typeof _Content> & VariantProps<typeof content>
->(({ className, position, ...props }, ref) => (
-	<_Content ref={ref} className={content({ position, className })} {...props} />
+>(({ className, position, animated, ...props }, ref) => (
+	<_Content ref={ref} className={content({ position, animated, className })} {...props} />
 ))
 Content.displayName = _Content.displayName
 
-const Overlay = forwardRef<
+export const Overlay = forwardRef<
 	ComponentRef<typeof _Overlay>,
 	ComponentPropsWithoutRef<typeof _Overlay>
 >(({ className, ...props }, ref) => (
@@ -62,12 +74,13 @@ const Overlay = forwardRef<
 ))
 Overlay.displayName = _Overlay.displayName
 
-const Title = forwardRef<ComponentRef<typeof _Title>, ComponentPropsWithoutRef<typeof _Title>>(
-	({ className, ...props }, ref) => <_Title ref={ref} className={cx('', className)} {...props} />
-)
+export const Title = forwardRef<
+	ComponentRef<typeof _Title>,
+	ComponentPropsWithoutRef<typeof _Title>
+>(({ className, ...props }, ref) => <_Title ref={ref} className={cx('', className)} {...props} />)
 Title.displayName = _Title.displayName
 
-const Description = forwardRef<
+export const Description = forwardRef<
 	ComponentRef<typeof _Description>,
 	ComponentPropsWithoutRef<typeof _Description>
 >(({ className, ...props }, ref) => (
@@ -75,4 +88,12 @@ const Description = forwardRef<
 ))
 Description.displayName = _Description.displayName
 
-export { Content, Description, Overlay, Portal, Root, Title, Trigger }
+export {
+	Root as Dialog,
+	Content as DialogContent,
+	Description as DialogDescription,
+	Overlay as DialogOverlay,
+	Portal as DialogPortal,
+	Title as DialogTitle,
+	Trigger as DialogTrigger
+}

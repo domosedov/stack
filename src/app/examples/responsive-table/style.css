@@ -1,0 +1,58 @@
+.container-table {
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: auto;
+	height: 400px; /* Set the height of the container to make the table scrollable */
+	border: 1px solid #ddd;
+	position: relative;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+	min-width: 640px; /* Set the minimum width of the table */
+}
+th,
+td {
+	padding: 10px;
+	text-align: left;
+	border: 1px solid #ddd;
+	min-width: 100px;
+}
+th {
+	background-color: #f2f2f2;
+	position: sticky;
+	top: 0;
+	z-index: 2; /* Ensure the header stays on top */
+}
+td:first-child,
+th:first-child {
+	position: sticky;
+	left: 0;
+	background-color: #f2f2f2; /* Same background as header */
+	z-index: 1; /* Ensure the first column stays on top */
+}
+th:first-child {
+	z-index: 3; /* Ensure the first header cell stays on top of both headers and first column */
+}
+th::before,
+td::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background: #ddd;
+	z-index: 4; /* Ensures the border appears on top */
+}
+th::after,
+td::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background: #ddd;
+	z-index: 4; /* Ensures the border appears on top */
+}

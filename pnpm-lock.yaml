@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@farfetched/core':
+        specifier: ^0.12.4
+        version: 0.12.4(effector@23.2.2)
       '@radix-ui/react-dialog':
         specifier: ^1.0.5
         version: 1.0.5(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       cva:
         specifier: 1.0.0-beta.1
         version: 1.0.0-beta.1(typescript@5.4.5)
+      effector:
+        specifier: ^23.2.2
+        version: 23.2.2
       next:
         specifier: 14.2.3
         version: 14.2.3(@babel/core@7.24.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -81,6 +87,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
+      tailwindcss-animated:
+        specifier: ^1.1.0
+        version: 1.1.0(tailwindcss@3.4.3)
       typescript:
         specifier: ^5
         version: 5.4.5
@@ -360,6 +369,11 @@ packages:
   '@eslint/js@8.57.0':
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@farfetched/core@0.12.4':
+    resolution: {integrity: sha512-2r+f58xsDLQ6I2OdyrnmoYhPth+BRTdmDkIuEYixPUqMQLyhI+bW5zKEyxOWclm1powfQWo1mfEkcq4blGr+4Q==}
+    peerDependencies:
+      effector: ^23.0.0
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -1244,6 +1258,10 @@ packages:
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
+
+  effector@23.2.2:
+    resolution: {integrity: sha512-gzwATi9pgZQx0TNhM2LESmoUpEO+vhibLZPCvVzi7spMvKFwKnfJV2PFj4xqNFFSC35TXaznx30ne62dCQ6ZRQ==}
+    engines: {node: '>=11.0.0'}
 
   electron-to-chromium@1.4.789:
     resolution: {integrity: sha512-0VbyiaXoT++Fi2vHGo2ThOeS6X3vgRCWrjPeO2FeIAWL6ItiSJ9BqlH8LfCXe3X1IdcG+S0iLoNaxQWhfZoGzQ==}
@@ -2518,6 +2536,11 @@ packages:
   tailwind-merge@2.3.0:
     resolution: {integrity: sha512-vkYrLpIP+lgR0tQCG6AP7zZXCTLc1Lnv/CCRT3BqJ9CZ3ui2++GPaGb1x/ILsINIMSYqqvrpqjUFsMNLlW99EA==}
 
+  tailwindcss-animated@1.1.0:
+    resolution: {integrity: sha512-2j2MHdlypqaqz5ymcGFAiLjYdyy/9M3aMqa4SKSQqyQnMyUIUDx/3orLyuUop5i2FucdzYXVwexSSU7Q1b0VCw==}
+    peerDependencies:
+      tailwindcss: '>=3.1.0'
+
   tailwindcss@3.4.3:
     resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
     engines: {node: '>=14.0.0'}
@@ -3052,6 +3075,10 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.0': {}
+
+  '@farfetched/core@0.12.4(effector@23.2.2)':
+    dependencies:
+      effector: 23.2.2
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -3940,6 +3967,8 @@ snapshots:
   dom-accessibility-api@0.5.16: {}
 
   eastasianwidth@0.2.0: {}
+
+  effector@23.2.2: {}
 
   electron-to-chromium@1.4.789: {}
 
@@ -5372,6 +5401,10 @@ snapshots:
   tailwind-merge@2.3.0:
     dependencies:
       '@babel/runtime': 7.24.6
+
+  tailwindcss-animated@1.1.0(tailwindcss@3.4.3):
+    dependencies:
+      tailwindcss: 3.4.3
 
   tailwindcss@3.4.3:
     dependencies:
