@@ -12,5 +12,5 @@ export const query = withFactory({
 				}
 			})
 		}),
-	sid: 'sample query'
+	sid: 'myQuery'
 })
