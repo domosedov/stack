@@ -1,0 +1,6 @@
+.safe-area-container {
+	height: 100vh;
+	height: calc(100vh - calc(100vh - 100%));
+	padding-top: env(safe-area-inset-top);
+	padding-bottom: env(safe-area-inset-bottom);
+}

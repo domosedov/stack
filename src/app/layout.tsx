@@ -1,3 +1,5 @@
+import { QueryClientProvider } from '@/shared/query_client.provider'
+import { EffectorNext } from '@effector/next'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
@@ -19,10 +21,15 @@ export default function RootLayout({
 	return (
 		<html lang="ru">
 			<body className={inter.className}>
-				<nav>
-					<Link href="/examples/responsive-table">Responsive Table</Link>
-				</nav>
-				{children}
+				<aside>
+					<nav>
+						<Link href="/examples/responsive-table">Responsive Table</Link>
+						<Link href="/examples/react-query/todos">React Query todos</Link>
+					</nav>
+				</aside>
+				<EffectorNext>
+					<QueryClientProvider>{children}</QueryClientProvider>
+				</EffectorNext>
 			</body>
 		</html>
 	)

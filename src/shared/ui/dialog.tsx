@@ -1,5 +1,3 @@
-'use client'
-
 import type { VariantProps } from '@/shared/libs/cva'
 import { cva, cx } from '@/shared/libs/cva'
 import {
@@ -43,7 +41,8 @@ const content = cva({
 		}
 	},
 	defaultVariants: {
-		position: 'top'
+		position: 'top',
+		animated: true
 	},
 	compoundVariants: [
 		{

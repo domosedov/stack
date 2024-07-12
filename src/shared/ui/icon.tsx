@@ -14,7 +14,7 @@ export function Icon({ name, className, ...props }: IconProps) {
 
 	return (
 		<svg
-			className={cx('icon', className)}
+			className={cx('sprite-icon', className)}
 			viewBox={viewBox}
 			data-axis={axis}
 			focusable="false"

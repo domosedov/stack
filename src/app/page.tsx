@@ -3,9 +3,11 @@ import {
 	DialogContent,
 	DialogOverlay,
 	DialogPortal,
+	DialogTitle,
 	DialogTrigger
 } from '@/shared/ui/dialog'
 import { Icon } from '@/shared/ui/icon'
+import { DialogDescription } from '@radix-ui/react-dialog'
 import { allSettled, fork, serialize } from 'effector'
 import { query } from './model'
 
@@ -33,6 +35,8 @@ export default async function Home() {
 						animated
 						className="bg-black font-mono text-xl/6 text-lime-400"
 					>
+						<DialogTitle>Some content</DialogTitle>
+						<DialogDescription>Some description</DialogDescription>
 						Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
 						Свое, города составитель о ее деревни страна он риторический которое собрал родного даль
 						взгляд правилами агентство залетают свой возвращайся заглавных?
