@@ -1,4 +1,12 @@
-import { QueryClient, defaultShouldDehydrateQuery, isServer } from '@tanstack/react-query'
+import { QueryCache, QueryClient } from '@tanstack/query-core'
+import { defaultShouldDehydrateQuery, isServer } from '@tanstack/react-query'
+import { createStore } from 'effector'
+
+export const $queryClient = createStore(
+	new QueryClient({
+		queryCache: new QueryCache()
+	})
+)
 
 export function createQueryClient() {
 	return new QueryClient({

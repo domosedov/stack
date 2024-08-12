@@ -1,5 +1,5 @@
 // @ts-expect-error effector does not have public types of withFactory
-import { withFactory as withFactoryRow } from 'effector'
+import { withFactory as _withFactory } from 'effector'
 
 type WithFactory = <R>({
 	sid,
@@ -15,4 +15,4 @@ type WithFactory = <R>({
 	fn: () => R
 }) => R
 
-export const withFactory = withFactoryRow as WithFactory
+export const withFactory = _withFactory as WithFactory

@@ -11,11 +11,17 @@ const config: Config = {
 				focused: 'focused=true',
 				hovered: 'hovered=true',
 				pressed: 'pressed=true'
+			},
+			colors: {
+				background: 'oklch(var(--color-background) / <alpha-value>)',
+				foreground: 'oklch(var(--color-foreground) / <alpha-value>)',
+				primary: 'oklch(var(--color-primary) / <alpha-value>)',
+				border: 'oklch(var(--color-primary))'
 			}
 		}
 	},
 	plugins: [
-		twPlugin(function ({ addComponents }) {
+		twPlugin(function ({ addComponents, theme }) {
 			addComponents({
 				'.sprite-icon': {
 					boxSizing: 'border-box',
@@ -28,6 +34,14 @@ const config: Config = {
 					},
 					'&[data-axis*="y"]': {
 						height: '1em'
+					}
+				},
+				'.input-border': {
+					borderWidth: '1px',
+					borderStyle: 'solid',
+					borderColor: theme('colors.red.500'),
+					'@media (prefers-color-scheme: dark)': {
+						borderColor: theme('colors.red.100')
 					}
 				}
 			})

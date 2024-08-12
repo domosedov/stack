@@ -15,13 +15,11 @@ export default async function Home() {
 	const scope = fork()
 	await allSettled(query.refresh, { scope })
 
-	console.log('sid', query.__.meta.sid)
-
 	return (
 		<main className="mx-auto max-w-screen-xl px-4">
 			<h1>Page</h1>
-			<Icon name="tabler/selector" className="text-[300px]" />
-			<Icon name="tabler/brand-telegram" className="stroke-[10] text-[300px]" />
+			<Icon name="tabler/selector" />
+			<Icon name="tabler/brand-telegram" />
 			<pre>{JSON.stringify(serialize(scope), null, 2)}</pre>
 			<Dialog>
 				<DialogTrigger className="flex items-center gap-x-2 rounded border p-2 text-2xl">
